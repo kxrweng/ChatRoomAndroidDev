@@ -7,6 +7,7 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.chatroom.R;
 import com.example.chatroom.databinding.ItemContainerReceivedMessageBinding;
 import com.example.chatroom.databinding.ItemContainerSentMessageBinding;
 import com.example.chatroom.models.ChatMessage;
@@ -24,6 +25,14 @@ public class ChatAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>{
     public ChatAdapter(List<ChatMessage> chatMessages, Bitmap receiverProfileImage, String senderId) {
         this.chatMessages = chatMessages;
         this.receiverProfileImage = receiverProfileImage;
+        this.senderId = senderId;
+    }
+
+
+
+    public ChatAdapter(List<ChatMessage> chatMessages, String senderId) {
+        this.chatMessages = chatMessages;
+        this.receiverProfileImage = null;
         this.senderId = senderId;
     }
 
@@ -99,7 +108,14 @@ public class ChatAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>{
         void setData(ChatMessage chatMessage, Bitmap receiverProfileImage){
             binding.textMessage.setText(chatMessage.message);
             binding.textDateTime.setText(chatMessage.dateTime);
-            binding.imageProfile.setImageBitmap(receiverProfileImage);
+            binding.senderID.setText(chatMessage.senderId);
+            if(receiverProfileImage != null){
+                binding.imageProfile.setImageBitmap(receiverProfileImage);
+
+            }
+            else {
+                binding.imageProfile.setImageResource(R.drawable.defaultprofilepicture);
+            }
         }
     }
 }

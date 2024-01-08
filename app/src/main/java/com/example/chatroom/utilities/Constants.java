@@ -23,6 +23,8 @@ public class Constants {
     public static final String KEY_RECEIVER_IMAGE = "receiverImage";
     public static final String KEY_LAST_MESSAGE = "lastMessage";
     public static final String KEY_AVAILABILITY = "availability";
+    public static final String KEY_COLLECTION_GROUPCHAT = "Groupchat";
+    public static final String KEY_COLLECTION_GROUPCHATMESSAGES = "GroupchatMessages";
     public static final String REMOTE_MSG_AUTHORIZATION = "Authorization";
     public static final String REMOTE_MSG_CONTENT_TYPE = "Content-Type";
 }

@@ -68,6 +68,8 @@ public class MainActivity extends BaseActivity implements ConversationListener {
         binding.imageSignOut.setOnClickListener(v -> signOut());
         binding.fabNewChat.setOnClickListener(v ->
                 startActivity(new Intent(getApplicationContext(),UsersActivity.class)));
+        binding.fabGroupChat.setOnClickListener(v ->
+        startActivity(new Intent(getApplicationContext(), GroupchatActivity.class)));
     }
 
     private void loadUserDetails(){

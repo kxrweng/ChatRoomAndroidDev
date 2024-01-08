@@ -50,6 +50,9 @@ public class UsersAdapter extends RecyclerView.Adapter<UsersAdapter.UserViewHold
             binding = itemContainerUserBinding;
         }
         void setUserData(User user){
+            if(user.name == null || user.name.equals("")){
+                binding.textName.setText("Community Chat Room");
+            }
             binding.textName.setText(user.name);
             binding.textEmail.setText(user.email);
             binding.imageProfile.setImageBitmap(getUserImage(user.image));
